@@ -1,29 +1,29 @@
 package com.example.myapplication;
 
 public abstract class User {
-    private String name;
-    private String userId;
+    private String editTextUserName;
+    private String editTextUserId;
 
     public User(String name, String userId) {
-        this.name = name;
-        this.userId = userId;
+        this.editTextUserName = name;
+        this.editTextUserId = userId;
     }
 
     // Encapsulation
     public String getName() {
-        return name;
+        return editTextUserName;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.editTextUserName = name;
     }
 
     public String getUserId() {
-        return userId;
+        return editTextUserId;
     }
 
     public void setUserId(String userId) {
-        this.userId = userId;
+        this.editTextUserId = userId;
     }
 
     // Abstraction

@@ -19,7 +19,7 @@ public class TextNote extends Note {
 
     // Polymorphism
     @Override
-    public void display() {
-        System.out.println("TextNote: " + title + ": " + textContent + " (" + createdDate + ")");
+    public String display() {
+        return "TextNote: " + getTitle() + ": " + textContent + " (" + getCreatedDate() + ")";
     }
 }

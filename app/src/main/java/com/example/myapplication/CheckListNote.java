@@ -21,10 +21,12 @@ public class CheckListNote extends Note {
 
     // Polymorphism
     @Override
-    public void display() {
-        System.out.println("Checklist: " + title + " (" + createdDate + ")");
+    public String display() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("ChecklistNote: ").append(getTitle()).append(" (").append(getCreatedDate()).append(")\n");
         for (int i = 0; i < items.size(); i++) {
-            System.out.println("  - " + items.get(i));
+            sb.append("  - ").append(items.get(i)).append("\n");
         }
+        return sb.toString();
     }
 }

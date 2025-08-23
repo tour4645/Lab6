@@ -1,8 +1,9 @@
 package com.example.myapplication;
 
-public abstract class Note {
-    protected String title;
-    protected String createdDate;
+public class Note {
+    private String title;
+    private String createdDate;
+    private User owner; // เพิ่มข้อมูลเจ้าของโน้ต
 
     public Note(String title, String createdDate) {
         this.title = title;
@@ -26,10 +27,17 @@ public abstract class Note {
         this.createdDate = createdDate;
     }
 
-    // Abstraction
-    public abstract void display();
+    public User getOwner() {
+        return owner;
+    }
 
-    public void getSummary() {
-        System.out.println("Summary: " + title + " (" + createdDate + ")");
+    public void setOwner(User owner) {
+        this.owner = owner;
+    }
+
+    // Polymorphism
+    public String display() {
+        String ownerInfo = (owner != null) ? "\nOwner: " + owner.getName() + " (ID: " + owner.getUserId() + ")" : "\nOwner: Unknown";
+        return "Note: " + title + " (" + createdDate + ")" + ownerInfo;
     }
 }
